@@ -16,6 +16,7 @@ public partial class ProductPage : ContentPage
         var product = (Product)BindingContext;
         await App.Database.SaveProductAsync(product);
         listView.ItemsSource = await App.Database.GetProductsAsync();
+        listView.SelectedItem = null;
     }
     async void OnDeleteButtonClicked(object sender, EventArgs e)
     {
